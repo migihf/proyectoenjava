@@ -1,0 +1,74 @@
+/* CSS3 hoja. Para proyecto Mintic. */
+
+@font-face{
+    font-family: 'latothin';
+    src: url('fonts/latothin-webfont.woff2') format('woff2'),
+         url('fonts/latothin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'latothin';
+	background-color: #f7f7f7;
+	margin:auto;
+	margin-top: 5em;
+	margin-right: 1em;
+	margin-left: 1em;
+	text-align: center;
+}
+
+.logmsg {
+	border-bottom: 0.1em white solid;
+	padding-bottom:0.2em;
+	font-size: 1.1em;
+}
+.logbox {
+	width: 10em;
+	margin:auto;
+	margin-top: 1.6em;
+	background-color: #e7e7e7;
+	padding:0.45em 1em 1em 1em;
+	border-radius:1em;
+	color: #3e3e3e;
+}
+
+.logfield {
+	border: #e7e7e7 0.3em solid;
+	
+}
+
+.logbutton {
+	margin-top:1em;
+	padding: 0.4em;
+	background-color: white;
+	border: 0.1em #e7e7e7 solid;
+	border-radius: 0.3em;
+}
+
+h1{
+	border-bottom: 0.1em black solid;
+}
+
+footer {
+	position: fixed;
+	bottom: 0%;
+	right:1em;
+	
+}
+
+.glink{
+	text-decoration: none;
+	color: blue;
+}
+.glink:visited {
+	text-decoration: none;
+	color: blue;
+	
+}
+
+.glink:hover {
+	text-decoration: none;
+	color: cyan;
+	
+}
