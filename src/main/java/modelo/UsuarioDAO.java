@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import controlador.Conexion;
 
@@ -90,5 +91,23 @@ public class UsuarioDAO {
 			
 			return dat;
 		}
+	    
+	    public ArrayList<Usuario> Consultar(){
+	    	
+	    	ArrayList<Usuario> lista=new  ArrayList<Usuario>();
+	    	try {
+	    		ps = conectar.prepareStatement("SELECT * FROM usuarios");
+	    		res = ps.executeQuery();
+	    		while(res.next()) {
+	    			Usuario usu = new Usuario(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+	    			lista.add(usu);
+	    		}
+	    	} catch (SQLException e) {
+	    		// TODO Auto-generated catch block
+	    		e.printStackTrace();
+	    	}
+	    	return lista;
+	    }
+
 
 }

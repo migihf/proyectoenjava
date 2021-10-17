@@ -23,6 +23,8 @@ public class Proveedores extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		if (request.getSession(false).getAttribute("login") != null) {
 		ProveedorDAO proDAO = new ProveedorDAO();
 		if(request.getParameter("insertar") != null) {
 			if (!request.getParameter("ciudad").equals("") && !request.getParameter("direccion").equals("") && !request.getParameter("nombre").equals("") && !request.getParameter("telefono").equals("")) {
@@ -98,7 +100,7 @@ public class Proveedores extends HttpServlet {
 
 		if(request.getParameter("eliminar") != null) {
 			try {
-				long nit=Long.parseLong(request.getParameter("nit"));
+				long nit = Long.parseLong(request.getParameter("nit"));
 				Proveedor pro = proDAO.Buscar_Proveedor(nit);
 				if (pro != null) {
 					 if(proDAO.Eliminar_Proveedor(pro)){
@@ -113,5 +115,8 @@ public class Proveedores extends HttpServlet {
 				response.sendRedirect("proveedores.jsp?ds=1");
 			}
 		}
+	} else {
+		response.sendRedirect("index.jsp?sesion=1");
+	}
 	}
 }

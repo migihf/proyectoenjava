@@ -8,20 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import modelo.LoginDAO;
-import modelo.Usuario;
-
 /**
- * Servlet implementation class Login
+ * Servlet implementation class Salir
  */
-@WebServlet("/Login")
-public class Login extends HttpServlet {
+@WebServlet("/Salir")
+public class Salir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Salir() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +28,10 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		HttpSession sesion=request.getSession();
+		sesion.setAttribute("login", null);
+		response.sendRedirect("index.jsp?salir=1");
 	}
 
 	/**
@@ -39,20 +39,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession sesion=request.getSession();
-		sesion.setAttribute("login", null);
-		if(request.getParameter("btnLogin")!=null){
-			String usua = request.getParameter("usu");
-			String pass = request.getParameter("pass");
-			LoginDAO logDAO = new LoginDAO();
-			Usuario usu = logDAO.Buscar_Usuario(usua, pass);
-				if (usu != null) {
-					sesion.setAttribute("login", "okei");
-					response.sendRedirect("menuprincipal.jsp");
-				} else {
-					 response.sendRedirect("index.jsp?error=1");
-				}
-		}
+		doGet(request, response);
 	}
 
 }

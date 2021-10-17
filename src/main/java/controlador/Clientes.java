@@ -26,6 +26,8 @@ public class Clientes extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		if (request.getSession(false).getAttribute("login") != null) {
 		ClienteDAO cliDAO= new ClienteDAO();
 
 		if(request.getParameter("insertar") != null) {
@@ -117,6 +119,10 @@ public class Clientes extends HttpServlet {
 			} catch (Exception e) {
 				response.sendRedirect("clientes.jsp?ds=1");
 			}
+		}
+
+		} else {
+			response.sendRedirect("index.jsp?sesion=1");
 		}
 	}
 }
