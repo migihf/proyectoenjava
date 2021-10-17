@@ -32,7 +32,8 @@ if (request.getParameter("nitproveedor") != null) {
 			<b>Proveedores</b>&nbsp;|&nbsp;
 			<a href="productos.jsp">Productos</a>&nbsp;|&nbsp;
 			<a href="ventas.jsp">Ventas</a>&nbsp;|&nbsp;
-			<a href="reportes.jsp">Reportes</a>
+			<a href="reportes.jsp">Reportes</a>&nbsp;|&nbsp;
+			<a href="Salir">Cerrar Sesión</a>
         </nav>
     </header>
 
@@ -56,7 +57,7 @@ if (request.getParameter("nitproveedor") != null) {
 		</fieldset>
 		<%
 if (request.getParameter("nitproveedor") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend>");
 	out.print("<p>&nbsp;<b>NIT</b>: "+nitproveedor+"</p>");
     out.print("<p>&nbsp;<b>Ciudad</b>: "+ciudad+"</p>");
 	out.print("<p>&nbsp;<b>Dirección</b>: "+direccion+"</p>");
@@ -66,16 +67,16 @@ if (request.getParameter("nitproveedor") != null) {
 %>
 <%
 if (request.getParameter("resultado") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>Operación exitosa.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>Operación exitosa.</p></fieldset>");
 } 
 if (request.getParameter("error") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>Operación no exitosa.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>Operación no exitosa.</p></fieldset>");
 } 
 if (request.getParameter("ed") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>Proveedor no hallado.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>Proveedor no hallado.</p></fieldset>");
 } 
 if (request.getParameter("ds") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>No se ingresaron correctamente todos los campos.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>No se ingresaron correctamente todos los campos.</p></fieldset>");
 } 
 %>
 </body>

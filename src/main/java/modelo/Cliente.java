@@ -14,6 +14,9 @@ public class Cliente {
 		email_cliente = a4;
 		telefono_cliente = a5;
 	}
+	public Cliente(long a1) {
+		this.cedula_cliente = a1;
+	}
 	public long getCedula_cliente() {
 		return cedula_cliente;
 	}

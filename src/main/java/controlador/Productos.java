@@ -37,9 +37,10 @@ public class Productos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		if (request.getSession(false).getAttribute("login") != null) {
 		if(request.getParameter("cargar")!=null) {
 			Part archivo= request.getPart("archivo");
-			String Url="C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Data\\tiendageneris\\";			
+			String Url="";			
 			InputStream file = archivo.getInputStream();
 			File copia = new File(Url+"archivo12.csv");
 			FileOutputStream escribir = new FileOutputStream(copia);
@@ -64,6 +65,9 @@ public class Productos extends HttpServlet {
 			}
 		} else {
 			response.sendRedirect("productos.jsp?ed=1");
+		}
+		} else {
+			response.sendRedirect("index.jsp?sesion=1");
 		}
 	}
 }

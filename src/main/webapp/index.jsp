@@ -21,10 +21,16 @@
 				if (request.getParameter("error") != null) {
 	out.print("<hr><b>Información incorrecta.</b>");
 } 
+				if (request.getParameter("sesion") != null) {
+					out.print("<hr><b>No está ingresado en el sistema.</b>");
+				} 
+				if (request.getParameter("salir") != null) {
+					out.print("<hr><b>Sesión cerrada exitosamente.</b>");
+				}
 %>
 			</div>
 		<footer>
-			<p><a href="https://github.com" class="glink">¡Revise en Github!</a></p>
+			<p><a href="https://github.com/migihf/proyectoenjava" class="glink">¡Revise en Github!</a></p>
 		</footer>
 	</body>
 </html>

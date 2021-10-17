@@ -21,7 +21,8 @@
 			<a href="proveedores.jsp">Proveedores</a>&nbsp;|&nbsp;
 			<a href="productos.jsp">Productos</a>&nbsp;|&nbsp;
 			<a href="ventas.jsp">Ventas</a>&nbsp;|&nbsp;
-			<a href="reportes.jsp">Reportes</a>
+			<a href="reportes.jsp">Reportes</a>&nbsp;|&nbsp;
+			<a href="Salir">Cerrar Sesión</a>
         </nav>
     </header>
 

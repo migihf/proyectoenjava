@@ -24,7 +24,7 @@ if (request.getParameter("nitproveedor") != null) {
 %>    
     <header>
         <div class="logo-titulo">
-			<h1>Tienda Géneris | Gestión de Proveedores</h1>
+			<h1>Tienda Géneris | Gestión de Productos</h1>
         </div>
         <nav>
             <a href="usuarios.jsp">Usuarios</a>&nbsp;|&nbsp;
@@ -32,7 +32,8 @@ if (request.getParameter("nitproveedor") != null) {
 			<a href="proveedores.jsp">Proveedores</a>&nbsp;|&nbsp;
 			<b>Productos</b>&nbsp;|&nbsp;
 			<a href="ventas.jsp">Ventas</a>&nbsp;|&nbsp;
-			<a href="reportes.jsp">Reportes</a>
+			<a href="reportes.jsp">Reportes</a>&nbsp;|&nbsp;
+			<a href="Salir">Cerrar Sesión</a>
         </nav>
     </header>
 
@@ -46,16 +47,16 @@ if (request.getParameter("nitproveedor") != null) {
 		</fieldset>
 <%
 if (request.getParameter("resultado") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>Datos cargados correctamente.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>Datos cargados correctamente.</p></fieldset>");
 } 
 if (request.getParameter("error") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>No se subió el archivo correctamente.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>No se subió el archivo correctamente.</p></fieldset>");
 } 
 if (request.getParameter("ds") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>Error. Los datos no fueron cargados.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>Error. Los datos no fueron cargados.</p></fieldset>");
 } 
 if (request.getParameter("ed") != null) {
-	out.print("<fieldset class=\"cont-form\">\n<legend>Resultado</legend><p>No se subió archivo.</p></fieldset>");
+	out.print("<fieldset class=\"cont-form result\">\n<legend>Resultado</legend><p>No se subió archivo.</p></fieldset>");
 } 
 %>
 </body>

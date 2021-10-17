@@ -47,7 +47,8 @@ body {
 }
 
 h1{
-	border-bottom: 0.1em black solid;
+	border-bottom: 0.1em #008000 solid;
+	color: #008000;
 }
 
 footer {
@@ -60,6 +61,7 @@ footer {
 .glink{
 	text-decoration: none;
 	color: blue;
+	background-color: gray;
 }
 .glink:visited {
 	text-decoration: none;

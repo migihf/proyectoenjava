@@ -14,8 +14,8 @@ body {
 	margin-left: 1em;
 }
 .logo-titulo {
-	border-bottom: 0.3em solid black;
-
+	border-bottom: 0.3em solid #008000;
+	color: #008000;
 }
 
 .h1{
@@ -31,7 +31,7 @@ body {
 
 nav {
 	text-align: center;
-	background-color: #e7e7e7;
+	background-color: #4CB942;
 	border-bottom: 0.1em solid black;
 	margin-bottom: 1em;
 }

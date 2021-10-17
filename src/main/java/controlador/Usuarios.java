@@ -26,6 +26,7 @@ public class Usuarios extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		if (request.getSession(false).getAttribute("login") != null) {
 		UsuarioDAO usuDAO = new UsuarioDAO();	
 		if(request.getParameter("insertar") != null) {
 			 long cedula;
@@ -115,6 +116,9 @@ public class Usuarios extends HttpServlet {
 			} catch (Exception e) {
 				response.sendRedirect("usuarios.jsp?ds=1");
 			}
+		}
+		} else {
+			response.sendRedirect("index.jsp?sesion=1");
 		}
 	}
 }
